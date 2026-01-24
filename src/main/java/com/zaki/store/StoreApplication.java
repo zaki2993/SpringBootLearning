@@ -9,7 +9,10 @@ public class StoreApplication {
 
 	public static void main(String[] args) {
 		var context = SpringApplication.run(StoreApplication.class, args);
-    var orderService = context.getBean(OrderService.class);
-    orderService.palceOrder();
+    var not = context.getBean(NotificationManager.class);
+    not.send();
+
+		// var context = SpringApplication.run(StoreApplication.class, args);
+    // var notificarionmanager = context.getBean(NotificationManager.class);
 	}
 }

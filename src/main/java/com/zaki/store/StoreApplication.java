@@ -1,5 +1,6 @@
 package com.zaki.store;
 
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StoreApplication {
 
 	public static void main(String[] args) {
-		// SpringApplication.run(StoreApplication.class, args);
-    OrderService orderService = new OrderService(new StripPaymentService());
+		var context = SpringApplication.run(StoreApplication.class, args);
+    var orderService = context.getBean(OrderService.class);
     orderService.palceOrder();
 	}
 }

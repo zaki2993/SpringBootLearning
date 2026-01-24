@@ -1,0 +1,9 @@
+spring:
+  application:
+    name:
+      store
+stripe:
+  url: https://www.stripe.com
+  enabled: true
+  timout: 100
+  supported-currencies: USD,EUR
